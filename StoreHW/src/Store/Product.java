@@ -7,18 +7,21 @@ public class Product {
     private long id = nextId++;
     private String name;
     private double price;
+    private double weight;
+    private String supplier;
 
 
     public Product() {}
 
-    public Product(long id){
-        this.id = id;
-    }
-
     public Product(String name, double price) {
-        this.id = id;
+    	this.name = name;
+    	this.price = price;
+    }
+    
+    public Product(String name, double price, double weight) {
         this.name = name;
         this.price = price;
+        this.weight = weight;
     }
 
     @Override
@@ -43,8 +46,8 @@ public class Product {
     }
 
     public static void main(String[] args){
-        Product P1 = new Product("iRqn",65.28);
-        Product P2 = new Product("Universe S6",124.22);
+        Product P1 = new Product("iRqn",65.28,21.56);
+        Product P2 = new Product("Universe S6",124.22,24.54);
         System.out.println(P1);
         System.out.println(P2);
 
