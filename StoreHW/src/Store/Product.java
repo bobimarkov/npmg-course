@@ -65,7 +65,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return String.format("Id: %s \nName: %s\nPrice: %s\n\n",id,name,price);
+        return String.format("Id: %s \nName: %s\nPrice: %s\nWeight: %s\nSupplier: %s\nMeasuring Unit: %s\n\n",id,name,price,weight,supplier,mu);
     }
 
     public static void main(String[] args){
