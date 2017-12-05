@@ -9,7 +9,7 @@ public class Product {
     private double price;
     private double weight;
     private String supplier;
-
+    private MeasuringUnits mu;
 
     public Product() {}
 
@@ -22,6 +22,29 @@ public class Product {
         this.name = name;
         this.price = price;
         this.weight = weight;
+    }
+
+    public Product(String name, double price, double weight, String supplier) {
+        this.name = name;
+        this.price = price;
+        this.weight = weight;
+        this.supplier = supplier;
+    }
+
+    public Product(String name, double price, double weight, String supplier, MeasuringUnits mu) {
+        this.name = name;
+        this.price = price;
+        this.weight = weight;
+        this.supplier = supplier;
+        this.mu = mu;
+    }
+
+    public Product(Product other){
+        this.name = other.name;
+        this.price = other.price;
+        this.weight = other.weight;
+        this.supplier = other.supplier;
+        this.mu = other.mu;
     }
 
     @Override
