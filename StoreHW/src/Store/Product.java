@@ -19,23 +19,17 @@ public class Product {
     }
     
     public Product(String name, double price, double weight) {
-        this.name = name;
-        this.price = price;
+        this(name,price);
         this.weight = weight;
     }
 
     public Product(String name, double price, double weight, String supplier) {
-        this.name = name;
-        this.price = price;
-        this.weight = weight;
+        this(name,price,weight);
         this.supplier = supplier;
     }
 
     public Product(String name, double price, double weight, String supplier, MeasuringUnits mu) {
-        this.name = name;
-        this.price = price;
-        this.weight = weight;
-        this.supplier = supplier;
+        this(name,price,weight,supplier);
         this.mu = mu;
     }
 
