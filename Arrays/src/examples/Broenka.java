@@ -13,13 +13,20 @@ public class Broenka {
 			x[i]=true;
 		}
 		do {
-			if(y+m>n)y=(y+m)-n;
-			else y+=m;
-			x[y-1]=false;
-			if(counter==2)p=y-1;
+//			if(y+m>n)y=(y+m)-n;
+//			else y+=m;
+			for(int z=0;z<m;z++) {
+				if(x[y]==false) {z--;y++;continue;}
+				if(y+1==n)y=0;
+				else y++;
+				System.out.println("Y = "+y+"  |  Z = "+z+"  |  X[Y] = "+x[y]);
+			}
+			if(y==0) x[y]=false;
+			else x[y-1]=false;
+			if(counter==2)p=y;
 			counter--;
 
-			System.out.println(Arrays.toString(x)+ " | "+(y-1));
+			System.out.println(Arrays.toString(x)+ " | "+(y));
 		}
 		while(counter>1);
 		return p+m;
