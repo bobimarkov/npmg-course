@@ -7,7 +7,7 @@ public class Broenka {
 	private static Scanner sc = new Scanner(System.in);
 	
 	public static int findWinner(int n,int m) {
-		int p = 0,counter = n,y=0;
+		int counter = n,y=0,zz;
 		boolean[] x = new boolean[n];
 		for(int i=0;i<x.length;i++) {
 			x[i]=true;
@@ -15,21 +15,22 @@ public class Broenka {
 		do {
 //			if(y+m>n)y=(y+m)-n;
 //			else y+=m;
+            zz=-1;
+            int k=0,mc=0;
 			for(int z=0;z<m;z++) {
-				if(x[y]==false) {z--;y++;continue;}
-				if(y+1==n)y=0;
-				else y++;
-				System.out.println("Y = "+y+"  |  Z = "+z+"  |  X[Y] = "+x[y]);
+                zz++;
+                if((y+zz)%n==0 && (y+zz)>0)mc++;
+                k=(y+zz)-(n*mc);
+                if(x[k]==false)z--;
 			}
-			if(y==0) x[y]=false;
-			else x[y-1]=false;
-			if(counter==2)p=y;
+            y=k;
+			x[k]=false;
 			counter--;
 
-			System.out.println(Arrays.toString(x)+ " | "+(y));
+//			System.out.println(Arrays.toString(x)+ " | "+(y+1));
 		}
-		while(counter>1);
-		return p+m;
+		while(counter>=1);
+		return y+1;
 	}
 	
 	public static void main(String[] args) {
