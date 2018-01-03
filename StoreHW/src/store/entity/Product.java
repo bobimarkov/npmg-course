@@ -1,8 +1,8 @@
-package Store;
+package store.entity;
 
 import java.util.Objects;
 
-public class Product {
+public class Product implements Comparable<Product> {
     private static long nextId = 0;
     private long id = nextId++;
     private String name;
@@ -41,6 +41,10 @@ public class Product {
         this.mu = other.mu;
     }
 
+    public long getId() {
+    	return this.id;
+    }
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -70,4 +74,9 @@ public class Product {
 
         System.out.println(P1.equals(P2));
     }
+
+	@Override
+	public int compareTo(Product o) {
+		return (int)Math.signum(o.getId() - getId());
+	}
 }

@@ -16,9 +16,9 @@ public class ProductController {
 		products = new Product[capacity];
 	}
 	
-	public Product findById(long id) {
-		Arrays.binarySearch(a, key);
-	}
+//	public Product findById(long id) {
+//		//Arrays.binarySearch(a, key);
+//	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
