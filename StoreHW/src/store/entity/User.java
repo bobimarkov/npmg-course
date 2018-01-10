@@ -3,8 +3,8 @@ package store.entity;
 import java.util.Objects;
 
 public class User {
-
-    private long id;
+	public static long nextId = 0;
+    public long id = nextId++;
     private String username;
     private String email;
     private String fName;
@@ -18,8 +18,7 @@ public class User {
         this.id = id;
     }
 
-    public User(long id, String username, String email, String fName, String lName, String password) {
-        this.id = id;
+    public User(String username, String email, String fName, String lName, String password) {
         this.username = username;
         this.email = email;
         this.fName = fName;
@@ -28,8 +27,7 @@ public class User {
         this.role = Role.CUSTOMER;
     }
 
-    public User(long id, String username, String email, String fName, String lName, String password, Role role) {
-        this.id = id;
+    public User(String username, String email, String fName, String lName, String password, Role role) {
         this.username = username;
         this.email = email;
         this.fName = fName;
@@ -38,7 +36,65 @@ public class User {
         this.role = role;
     }
 
-    @Override
+    
+    
+    public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getfName() {
+		return fName;
+	}
+
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+
+	public String getlName() {
+		return lName;
+	}
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	@Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;

@@ -12,6 +12,10 @@ public class Product implements Comparable<Product> {
     private MeasuringUnits mu;
 
     public Product() {}
+    
+    public Product(long id) {
+    	this.id = id;
+    }
 
     public Product(String name, double price) {
     	this.name = name;
@@ -45,7 +49,53 @@ public class Product implements Comparable<Product> {
     	return this.id;
     }
     
-    @Override
+    
+    
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	public String getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
+	}
+
+	public MeasuringUnits getMu() {
+		return mu;
+	}
+
+	public void setMu(MeasuringUnits mu) {
+		this.mu = mu;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
